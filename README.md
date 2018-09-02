@@ -1,4 +1,4 @@
-# debian-git
-A minimal docker container with debian and git.
-
-[![docker](http://dockeri.co/image/samueldebruyn/debian-git "docker")](https://registry.hub.docker.com/u/samueldebruyn/debian-git/)
+# debian-git-sshd
+A minimal docker container running Debian, with git and OpenSSH's sshd
+installed.
+Based on & builds on top of https://github.com/SamuelDebruyn/docker-debian-git.

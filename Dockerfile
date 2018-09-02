@@ -1,17 +1,10 @@
-FROM debian:stable-slim
-MAINTAINER Samuel Debruyn <s@muel.be>
+FROM samueldebruyn/debian-git
+MAINTAINER smheidrich
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# setup workdir
-RUN mkdir -p /root/work/
-WORKDIR /root/work/
-
-# install git
-RUN apt-get -y update && apt-get -y install git
+# install sshd
+RUN apt-get -y update && apt-get -y install openssh-server
 
 # slim down image
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/man/?? /usr/share/man/??_*
-
-# run a CMD to show git is installed
-CMD git help
